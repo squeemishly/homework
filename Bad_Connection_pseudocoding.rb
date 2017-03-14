@@ -18,3 +18,5 @@
         The second time they say goodbye, thank them for calling and leave the program 
 
 actual code to follow soon
+
+now I see new stuff?
