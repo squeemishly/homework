@@ -1,7 +1,9 @@
-for i in 1..1000 do
-    if i%3==0 then puts "Fizz"
-    elsif i%5==0 then puts "Buzz" 
-    elsif i%7==0 then puts "Super"
-    else puts i
+count = (1..1000).to_a
+count.each do |i|
+    puts case 
+        when i%3==0 then "Fizz"
+        when i%5==0 then "Buzz" 
+        when i%7==0 then "Super"
+        else i
     end
 end
