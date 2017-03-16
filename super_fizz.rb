@@ -1,5 +1,4 @@
 for i in 1..1000 do
-
     if i%7==0 && i%5==0 && i%3==0
         puts "SuperFizzBuzz"
     elsif i%7==0 && i%3==0
@@ -17,5 +16,4 @@ for i in 1..1000 do
     else
         puts i
     end
-
 end
