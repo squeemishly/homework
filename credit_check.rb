@@ -1,20 +1,30 @@
-puts "Enter your credit card number: "
-credit_card_number = gets.chomp
-credit_card_number = credit_card_number.split('')
-p credit_card_number
-credit_card_number = credit_card_number.reverse
-p credit_card_number
+card_number = "4929735477250543"
+valid = false
 
-credit_card_number.each_with_index do |number, index|
-    
-    if index
-        puts index
-        number = number * 2
-
-    else
-        next
-    end
-
+def split_and_reverse (cc_number)
+  cc_number = cc_number.split('').map(&:to_i)
+  p cc_number
+  cc_number = cc_number.reverse
 end
 
-p credit_card_number
+def multiply_by_two(cc_number)
+  cc_number.each_with_index do |number, index|
+    if index == 0
+      next
+    elsif index.even?
+      cc_number[index] = cc_number[index] * 2
+      if cc_number[index] > 9
+        cc_number[index] = cc_number[index].to_s
+        cc_number[index] = cc_number[index].split('').map(&:to_i)
+        p cc_number[index]
+      end
+    else
+      next
+    end
+  end
+  p cc_number
+end
+
+card_number = split_and_reverse(card_number)
+p card_number
+multiply_by_two(card_number)
