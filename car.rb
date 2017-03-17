@@ -42,6 +42,7 @@ puts "This sweet ride has #{my_car.wheel_count} wheels!"
 
 my_second_car = Car.new("blue", 2)
 puts "This sweet ride has #{my_second_car.wheel_count} wheels!"
+
 puts my_second_car.start
 puts my_car.start
 puts my_second_car.start
