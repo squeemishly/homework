@@ -16,15 +16,15 @@ def multiply_by_two(cc_number)
       if cc_number[index] > 9
         cc_number[index] = cc_number[index].to_s
         cc_number[index] = cc_number[index].split('').map(&:to_i)
-        p cc_number[index]
+        cc_number[index] = cc_number[index][0]+cc_number[index][1]
       end
     else
       next
     end
   end
-  p cc_number
 end
 
 card_number = split_and_reverse(card_number)
 p card_number
 multiply_by_two(card_number)
+p card_number
