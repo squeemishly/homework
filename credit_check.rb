@@ -1,19 +1,27 @@
 card_number = "4929735477250543"
 valid = false
 
-def split_and_reverse (cc_number)
-  cc_number = cc_number.split('').map(&:to_i)
-  p cc_number
-  cc_number = cc_number.reverse
+def split_long_number(number)
+  number = number.split('').map(&:to_i)
+  number
 end
 
+
+# def split_and_reverse (cc_number)
+#   cc_number = cc_number.split('').map(&:to_i)
+#   p cc_number
+#   cc_number = cc_number.reverse
+# end
+
 def multiply_by_two(cc_number)
+  cc_number = split_long_number(cc_number)
+  cc_number = cc_number.reverse
   cc_number.each_with_index do |number, index|
     if index.even?
       cc_number[index] = cc_number[index] * 2
       if cc_number[index] > 9
         cc_number[index] = cc_number[index].to_s
-        cc_number[index] = cc_number[index].split('').map(&:to_i)
+        cc_number[index] = split_long_number(cc_number[index])
         cc_number[index] = cc_number[index][0]+cc_number[index][1]
       end
     else
@@ -31,13 +39,13 @@ def find_check_digit (cc_number)
   end
   p total
   total_ones_digit = total.to_s
-  total_ones_digit = total_ones_digit.split('').map(&:to_i)
+  total_ones_digit = split_long_number(total_ones_digit)
   check_digit = 10 - total_ones_digit[1]
   p check_digit
 end
 
-card_number = split_and_reverse(card_number)
-p card_number
-multiply_by_two(card_number)
+# card_number = split_and_reverse(card_number)
+# p card_number
+card_number = multiply_by_two(card_number)
 p card_number
 find_check_digit(card_number)
