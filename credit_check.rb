@@ -1,5 +1,5 @@
 require 'pry'
-card_number = "4929735477250543"
+card_number = "5541808923795240"
 card_number_modified = card_number
 valid = false
 
@@ -29,6 +29,8 @@ def card_number_total(cc_number)
 end
 
 def evenly_divisible_by_ten(cc_number)
+  cc_number = multiply_by_two(cc_number)
+  cc_number = card_number_total(cc_number)
   if cc_number % 10 == 0
     puts "This is a valid card number!"
   else
@@ -36,9 +38,4 @@ def evenly_divisible_by_ten(cc_number)
   end
 end
 
-p card_number_modified
-card_number_modified = multiply_by_two(card_number_modified)
-p card_number_modified
-card_number_modified = card_number_total(card_number_modified)
-p card_number_modified
 evenly_divisible_by_ten(card_number_modified)
